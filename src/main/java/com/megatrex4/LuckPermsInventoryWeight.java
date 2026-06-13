@@ -6,7 +6,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.model.user.User;
-import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.level.ServerPlayer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,14 +30,14 @@ public class LuckPermsInventoryWeight implements ModInitializer {
 		);
 	}
 
-	private static float modifyMaxWeight(ServerPlayerEntity player, float currentMaxWeight) {
+	private static float modifyMaxWeight(ServerPlayer player, float currentMaxWeight) {
 		LuckPerms luckPerms = getLuckPerms();
 
 		if (luckPerms == null) {
 			return currentMaxWeight;
 		}
 
-		User user = luckPerms.getUserManager().getUser(player.getUuid());
+		User user = luckPerms.getUserManager().getUser(player.getUUID());
 
 		if (user == null) {
 			return currentMaxWeight;
