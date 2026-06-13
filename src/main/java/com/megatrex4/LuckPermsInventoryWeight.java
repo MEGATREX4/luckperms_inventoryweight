@@ -15,32 +15,9 @@ public class LuckPermsInventoryWeight implements ModInitializer {
 	public static final String MOD_ID = "luckperms_inventoryweight";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	/**
-	 * Flat max-weight bonus.
-	 *
-	 * Example:
-	 * /lp group vip meta set inventoryweight.maxweight.add 50
-	 */
+
 	private static final String META_ADD = "inventoryweight.maxweight.add";
-
-	/**
-	 * Percent bonus.
-	 *
-	 * Example:
-	 * /lp group vip meta set inventoryweight.maxweight.percent 25
-	 *
-	 * 25 = +25%
-	 */
 	private static final String META_PERCENT = "inventoryweight.maxweight.percent";
-
-	/**
-	 * Direct multiplier.
-	 *
-	 * Example:
-	 * /lp group vip meta set inventoryweight.maxweight.multiplier 1.5
-	 *
-	 * 1.5 = 1.5x
-	 */
 	private static final String META_MULTIPLIER = "inventoryweight.maxweight.multiplier";
 
 	@Override
